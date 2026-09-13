@@ -1,3 +1,16 @@
 spring:
   application:
     name: willca-order-assistant-api
+
+  mongodb:
+    uri: mongodb://admin:12345@localhost:27017/willca-payment?authSource=admin
+
+openai:
+  api-key: ${OPENAI_API_KEY}
+  base-url: https://api.openai.com
+  model: gpt-5-mini
+
+gemini:
+  api-key: ${GEMINI_API_KEY}
+  base-url: https://generativelanguage.googleapis.com
+  model: gemini-3.6-flash
