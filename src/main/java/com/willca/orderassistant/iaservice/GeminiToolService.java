@@ -1,6 +1,8 @@
-package com.willca.orderassistant.service;
+package com.willca.orderassistant.iaservice;
 
 import com.willca.orderassistant.client.GeminiClient;
+import com.willca.orderassistant.tool.CustomerTool;
+import com.willca.orderassistant.tool.OrderTool;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

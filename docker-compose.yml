@@ -12,5 +12,22 @@ services:
     volumes:
       - mongodb_data:/data/db
 
+  rag-postgres:
+    image: pgvector/pgvector:pg16
+    container_name: willca-rag-postgres
+    restart: unless-stopped
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: willca_rag
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - rag-postgres-data:/var/lib/postgresql/data
+
 volumes:
   mongodb_data:
+  rag-postgres-data:
+
+#docker compose up -d rag-postgres
+#docker compose down rag-postgres

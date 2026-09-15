@@ -5,6 +5,11 @@ spring:
   mongodb:
     uri: mongodb://admin:12345@localhost:27017/willca-payment?authSource=admin
 
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5433/willca_rag
+    username: postgres
+    password: postgres
+
 openai:
   api-key: ${OPENAI_API_KEY}
   base-url: https://api.openai.com
@@ -14,3 +19,6 @@ gemini:
   api-key: ${GEMINI_API_KEY}
   base-url: https://generativelanguage.googleapis.com
   model: gemini-3.6-flash
+  embedding:
+    model: gemini-embedding-2
+    dimensions: 768

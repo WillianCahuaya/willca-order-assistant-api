@@ -1,8 +1,8 @@
 package com.willca.orderassistant.controller;
 
 import com.willca.orderassistant.dto.AssistantRequest;
-import com.willca.orderassistant.service.GeminiContextService;
-import com.willca.orderassistant.service.GeminiToolService;
+import com.willca.orderassistant.iaservice.GeminiContextService;
+import com.willca.orderassistant.iaservice.GeminiToolService;
 import com.willca.orderassistant.service.OllamaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

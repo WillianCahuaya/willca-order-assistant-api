@@ -1,7 +1,7 @@
 package com.willca.orderassistant.controller;
 
 import com.willca.orderassistant.model.Order;
-import com.willca.orderassistant.service.OrderContextService;
+import com.willca.orderassistant.iaservice.OrderContextService;
 import com.willca.orderassistant.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

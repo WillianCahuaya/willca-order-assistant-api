@@ -47,6 +47,8 @@ public class GeminiClient {
 
     public Mono<String> chatWithContext(String systemPrompt, String context, String message) {
 
+        log.info("GEMINI_CLIENT_CONTEXT INIT:\nsystemPrompt: [{}]\ncontext: [{}]\nmessage: [{}]", systemPrompt, context, message);
+
         Map<String, Object> request = Map.of(
                 "system_instruction", Map.of(
                         "parts", List.of(
@@ -63,14 +65,15 @@ public class GeminiClient {
                 )
         );
 
-        log.info("GEMINI CONTEXT REQUEST: {}", request);
+        //log.info("GEMINI_CLIENT_CONTEXT REQUEST:\n[{}]", request);
 
         return webClient.post()
                 .uri(this::geminiUri)
                 .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(request)
                 .exchangeToMono(this::handleGeminiResponse)
-                .map(response -> response.at("/candidates/0/content/parts/0/text").asText());
+                .map(response -> response.at("/candidates/0/content/parts/0/text").asText())
+                .doOnSuccess(result -> log.info("GEMINI_CLIENT_CONTEXT RESPONSE:\n[{}]", result));
     }
 
     private Mono<JsonNode> handleGeminiResponse(ClientResponse response) {

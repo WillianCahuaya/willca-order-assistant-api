@@ -1,6 +1,7 @@
-package com.willca.orderassistant.service;
+package com.willca.orderassistant.iaservice;
 
 import com.willca.orderassistant.model.Order;
+import com.willca.orderassistant.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
